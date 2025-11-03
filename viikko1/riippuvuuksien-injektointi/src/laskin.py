@@ -14,6 +14,9 @@ class Laskin:
             if luku2 == -9999:
                 return
 
+            if luku1 < 0 or luku2 < 0:
+                continue 
+
             vastaus = self._laske_summa(luku1, luku2)
 
             self._io.kirjoita(f"Summa: {vastaus}")
