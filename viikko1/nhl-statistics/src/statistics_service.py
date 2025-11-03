@@ -14,7 +14,6 @@ class StatisticsService:
         for player in self._players:
             if name in player.name:
                 return player
-
         return None
 
     def team(self, team_name):
@@ -22,12 +21,7 @@ class StatisticsService:
             lambda player: player.team == team_name,
             self._players
         )
-
         return list(players_of_team)
-
-class StatisticsService:
-    def __init__(self, reader):
-        self._players = reader.get_players()
 
     def top(self, how_many, sort_by=SortBy.POINTS):
         def sort_key(player):
@@ -41,5 +35,4 @@ class StatisticsService:
                 raise ValueError("Unknown sort criteria")
 
         sorted_players = sorted(self._players, key=sort_key, reverse=True)
-
         return sorted_players[:how_many]  # Palautetaan haluttu määrä pelaajia
