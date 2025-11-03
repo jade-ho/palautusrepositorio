@@ -3,9 +3,7 @@ from player_reader import PlayerReader
 
 
 class StatisticsService:
-    def __init__(self):
-        reader = PlayerReader()
-
+    def __init__(self, reader):
         self._players = reader.get_players()
 
     def search(self, name):
@@ -16,12 +14,10 @@ class StatisticsService:
         return None
 
     def team(self, team_name):
-        return [player for player in self._players if player.team == team_name]
-
-        #players_of_team = filter(
-            #lambda player: player.team == team_name,
-            #self._players
-        #)
+        players_of_team = filter(
+            lambda player: player.team == team_name,
+            self._players
+        )
 
         return list(players_of_team)
 
@@ -36,11 +32,10 @@ class StatisticsService:
             key=sort_by_points
         )
 
-        return sorted_players[:how_many +1]
-#        result = []
-#        i = 0
-#        while i <= how_many:
-#            result.append(sorted_players[i])
-#            i += 1
+        result = []
+        i = 0
+        while i <= how_many:
+            result.append(sorted_players[i])
+            i += 1
 
-#        return result
+        return result

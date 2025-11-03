@@ -2,8 +2,8 @@ from urllib import request
 from player import Player
 
 class PlayerReader:
-    def __init__(self):
-        self._url = "https://studies.cs.helsinki.fi/nhlstats/2024-25/players.txt"
+    def __init__(self, url):
+        self._url = url
 
     def get_players(self):
         players_file = request.urlopen(self._url)
@@ -14,15 +14,13 @@ class PlayerReader:
             parts = decoded_line.split(";")
 
             if len(parts) > 3:
-                try:
-                    player = Player(
-                        parts[0].strip(),
-                        parts[1].strip(),
-                        int(parts[3].strip()),
-                        int(parts[4].strip())
-                    )
-                    players.append(player)
-                except ValueError:
-                    continue
+                player = Player(
+                    parts[0].strip(),
+                    parts[1].strip(),
+                    int(parts[3].strip()),
+                    int(parts[4].strip())
+                )
+
+                players.append(player)
 
         return players
