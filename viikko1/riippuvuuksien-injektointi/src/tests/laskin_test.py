@@ -29,3 +29,10 @@ class TestLaskin(unittest.TestCase):
 
         self.assertEqual(io.outputs[0], "Summa: 7")
         self.assertEqual(io.outputs[1], "Summa: 10")
+
+    def test_negatiivinen_luku2(self):
+        io = StubIO(["5", "-9999"])
+        laskin = Laskin(io)
+        laskin.suorita()
+
+        self.assertEqual(len(io.outputs), 0)
