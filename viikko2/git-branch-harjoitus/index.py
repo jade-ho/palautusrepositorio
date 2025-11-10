@@ -14,5 +14,5 @@ print(f"{erotus(x, y)}")
 <<<<<<< HEAD
 logger("lopetetaan")
 =======
-logger("lopetetaan") #hiphei
+logger("lopetetaan") # hiphei
 >>>>>>> bugikorjaus
