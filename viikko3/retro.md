@@ -1,0 +1,3 @@
+Start, Stop, Continue, More of, Less of Wheel -retrospektiivissä keskustellaan 10-25 minuuttia pienessä ryhmässä. Paperille piirretään alueet "start", "stop", "continue", "more of", ja "less of". Ohjaaja kannustaa keksimään jokaisen aiheen alueelle jotakin.
+
+Glad, Sad, Mad -retrospektiivissä on samanlainen käytäntö, jossa keksitään jokaisen "glad", "sad" ja "mad" alueen alle jotakin. Se, joka keksi aiheen, esittää sen ryhmälleen ja niistä keskustellaan. 
