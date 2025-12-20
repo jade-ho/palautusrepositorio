@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peli käynnissä</title>
+</head>
+<body>
+    <h1>Peli käynnissä</h1>
+    <form method="post">
+        <label>1. pelaajan siirto (k, p, s):</label>
+        <input type="text" name="ensimmaisen_siirto">
+        <button type="submit">Lähetä</button>
+    </form>
+    {% if virhe %}
+        <p style="color: red;">{{ virhe }}</p>
+    {% endif %}
+    {% if ensimmaisen_siirto and tokan_siirto %}
+        <p>1. pelaajan siirto: {{ ensimmaisen_siirto }}</p>
+        <p>2. pelaajan siirto: {{ tokan_siirto }}</p>
+    {% endif %}
+    <p>{{ tulos }}</p>
+</body>
+</html>
